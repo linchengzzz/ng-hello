@@ -1,6 +1,15 @@
-import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, OnInit, Output, QueryList } from '@angular/core';
-import { flyIn } from './fly-in';
-import { MyChildOneComponent } from '../my-child-one/my-child-one.component';
+import {
+    AfterContentInit,
+    Component,
+    ContentChildren,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    QueryList
+} from '@angular/core';
+import {flyIn} from './fly-in';
+import {MyChildOneComponent} from '../my-child-one/my-child-one.component';
 
 @Component({
     selector: 'app-my-child',
@@ -16,9 +25,6 @@ export class MyChildComponent implements OnInit, AfterContentInit {
     @Input()
     state: boolean;
 
-    @Output()
-    testFunc = new EventEmitter<string>();
-
     @ContentChildren(MyChildOneComponent)
     myChildOneComponent: QueryList<MyChildOneComponent>;
 
@@ -33,6 +39,5 @@ export class MyChildComponent implements OnInit, AfterContentInit {
     }
 
     handleClick() {
-        this.testFunc.emit('hello');
     }
 }

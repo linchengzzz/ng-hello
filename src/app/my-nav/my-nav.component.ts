@@ -52,7 +52,5 @@ export class MyNavComponent implements OnInit, AfterContentInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        console.log(this.myChildComponent);
-        this.myChildComponent.testFunc.subscribe(data => console.log(data));
     }
 }

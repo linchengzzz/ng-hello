@@ -1,12 +1,10 @@
 <div class="grid-container">
     <h1 class="mat-h1">Dashboard</h1>
     <mat-grid-list cols="2" rowHeight="350px">
-        <mat-grid-tile *ngFor="let card of cards | async; let index = index" [colspan]="card.cols"
-                       [rowspan]="card.rows">
+        <mat-grid-tile>
             <mat-card class="dashboard-card">
                 <mat-card-header>
                     <mat-card-title>
-                        {{card.title}}
                         <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                             <mat-icon>more_vert</mat-icon>
                         </button>
@@ -17,7 +15,15 @@
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="dashboard-card-content">
-                    <div>Card Content Here {{ index }}</div>
+                    <div>
+                        <label for="user-name">用户名: </label>
+                        <input id="user-name" type="email" [(ngModel)]="userName" class="form-control" placeholder="Email">
+                        <br>
+                        <br>
+                        <label for="password">密码: </label>
+                        <input #pwd id="password" type="password" class="form-control" placeholder="Password" (keyup)="0">
+                        <p>{{userName + '-' + pwd.value}}</p>
+                    </div>
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>

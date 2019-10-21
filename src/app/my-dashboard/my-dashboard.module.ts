@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MyDashboardRoutingModule } from './my-dashboard-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MyDashboardRoutingModule } from './my-dashboard-routing.module';
         MatIconModule,
         MatButtonModule,
         LayoutModule,
-        MyDashboardRoutingModule
+        MyDashboardRoutingModule,
+        FormsModule
     ]
 })
 export class MyDashboardModule {
